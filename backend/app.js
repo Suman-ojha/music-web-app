@@ -17,7 +17,7 @@ const userRoute = require("./routes/auth");
 app.use("/api/users", userRoute);
 
 mongoose.connect(process.env.DB_STRING, { useNewUrlParser: true });
-mongoose.connection.once("open", () => console.log("connected")).on("error", (error) => {
+mongoose.connection.once("open", () => console.log("connected to mongoDB")).on("error", (error) => {
   console.log(`ERROR :${error}`);
 });
 
